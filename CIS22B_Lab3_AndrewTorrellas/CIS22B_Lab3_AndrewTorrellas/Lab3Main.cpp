@@ -191,6 +191,7 @@ int main()
 					// Get user input
 					cin >> intInput;
 					// call setShift member function from ProductionWorker class
+					tryAgain = true;
 					while (tryAgain)
 					{
 						try
@@ -264,11 +265,44 @@ int main()
 					// Get user input
 					cin >> intInput;
 					// call setShift member function from ProductionWorker class
-					t1.setShift(intInput);
+
+					tryAgain = true;
+					while (tryAgain)
+					{
+						try
+						{
+							t1.setShift(intInput);
+							// If no exception was thrown, then the next statment will excute
+							tryAgain = false;
+						}
+						catch (string invalidShift)
+						{
+							cout << invalidShift;
+							cin >> intInput;
+						}
+					}
+
+					//t1.setShift(intInput);
 					cout << "Please enter the employee's hourly pay rate: ";
 					cin >> doubleInput;
 					// call setHourlyRate function from ProductionWorker class
-					t1.setHourlyRate(doubleInput);
+
+					tryAgain = true;
+					while (tryAgain)
+					{
+						try
+						{
+							w1.setHourlyRate(doubleInput);
+							tryAgain = false;
+						}
+						catch (string invalidPayrate)
+						{
+							cout << invalidPayrate;
+							cin >> doubleInput;
+						}
+					}
+
+				//	t1.setHourlyRate(doubleInput);
 					// Prompt user to enter input if user selects TEAM_LEADER option
 					cout << "Please enter the employee's monthly bonus: ";
 					cin >> doubleInput;
