@@ -34,7 +34,7 @@ public:
 	// Mutator
 	void setAmount(double a) { amount = a; };
 	void setRequired(double r) { required = r; };
-	void setAttended(double at) { attended = at; };
+	void setAttended(double at);
 
 	virtual void dynamicDisplayAttributes();
 };

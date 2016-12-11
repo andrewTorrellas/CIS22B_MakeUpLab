@@ -15,8 +15,25 @@ Employee::Employee()
 Employee::Employee(string n, int num, string h)
 {
 	name = n;
-	number = num;
+	if (num < 0 || num > 9999)
+	{
+		string employeeException = "Invalid employee number.  Enter a number between 0 and 9999.";
+		throw employeeException;
+	}
+	else
+		number = num;
 	hireDate = h;
+}
+
+void Employee::setNumber(int num)
+{
+	if (num < 0 || num > 9999)
+	{
+		string employeeException = "Invalid employee number.  Enter a number between 0 and 9999.";
+		throw employeeException;
+	}
+	else
+		number = num;
 }
 
 //***********************************************************************************

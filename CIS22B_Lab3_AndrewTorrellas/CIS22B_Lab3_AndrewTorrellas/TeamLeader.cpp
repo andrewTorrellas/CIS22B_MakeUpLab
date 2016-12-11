@@ -19,7 +19,13 @@ TeamLeader::TeamLeader(double am, double r, double at)
 {
 	amount = am;
 	required = r;
-	attended = at;
+	if (at < 8)
+	{
+		string employeeException = "Employee training incomplete.";
+		throw employeeException;
+	}
+	else
+		attended = at;
 }
 
 //***********************************************************************************
@@ -28,6 +34,18 @@ TeamLeader::TeamLeader(double am, double r, double at)
 TeamLeader::~TeamLeader()
 {
 	cout << "Destructor for TeamLeader class." << endl;
+}
+
+void TeamLeader::setAttended(double at)
+{
+	if (at < 8)
+	{
+		attended = at;
+		string employeeException = "Employee training incomplete.  Complete at least 8 hours of training.";
+		throw employeeException;
+	}
+	else
+		attended = at;
 }
 
 void TeamLeader::dynamicDisplayAttributes()
@@ -41,7 +59,7 @@ void TeamLeader::dynamicDisplayAttributes()
 		cout << "This employee works day shift." << endl;
 	else if (getShift() == 2)
 		cout << "This employee works night shift." << endl;
-	cout << "This employee's hourly pay rate is: $" << getHourlyRate() << endl << endl;
+	cout << "This employee's hourly pay rate is: $" << getHourlyRate() << endl;
 	cout << "This employee's monthly bonus is: " << getAmount() << endl;
 	cout << "This employee's required training hours are: " << getRequired() << endl;
 	cout << "This employee's attended training hours are: " << getAttended() << endl << endl;

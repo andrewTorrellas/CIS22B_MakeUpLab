@@ -129,9 +129,21 @@ int main()
 					cout << "Please enter the employee's name: ";
 					getline(cin, emplName);
 					emp1.setName(emplName);
-					cout << "Please enter the employee's number: ";
-					cin >> emplNum;
-					emp1.setNumber(emplNum);
+					bool tryAgain = true;
+					while (tryAgain)
+					{
+						try
+						{
+							cout << "Please enter the employee's number: ";
+							cin >> emplNum;
+							emp1.setNumber(emplNum);
+							tryAgain = false;
+						}
+						catch (string employeeException)
+						{
+							cout << employeeException << endl;
+						}
+					}
 					cout << "Please enter the employee's hiring date (MM/DD/YYYY): ";
 					cin.ignore();
 					getline(cin, hiringDate);
@@ -210,15 +222,27 @@ int main()
 					cin >> doubleInput;
 					// Call function setRequired fom TeamLeader class
 					t1.setRequired(doubleInput);
-					// Prompt user to enter training hours attended
-					cout << "Please enter the employee's attended training hours: ";
-					// Get user input 
-					cin >> doubleInput;
-					// Call function setAttended from TeamLeader class
-					t1.setAttended(doubleInput);
+
+					try
+					{
+						// Prompt user to enter training hours attended
+						cout << "Please enter the employee's attended training hours: ";
+						// Get user input 
+						cin >> doubleInput;
+						// Call function setAttended from TeamLeader class
+						t1.setAttended(doubleInput);
+					}
+					catch (string employeeException)
+					{
+						cout << employeeException << endl;
+					}
+					
+
 					// Display the data user entered
 					t1.dynamicDisplayAttributes();
 					cin.ignore();
+					system("pause");
+					system("cls");
 					break;
 				}
 
@@ -251,12 +275,14 @@ int main()
 					// Display user full inputs 
 					s1.dynamicDisplayAttributes();
 					cin.ignore();
+					system("pause");
+					system("cls");
 					break;
 				}
 
 				default:
 					// Prompt user to enter a valid choice
-					cout << "This is an invalid entry, please repeat." << endl;
+					cout << "This is an invalid entry, please try again." << endl;
 					cin.ignore();
 					break;
 				}

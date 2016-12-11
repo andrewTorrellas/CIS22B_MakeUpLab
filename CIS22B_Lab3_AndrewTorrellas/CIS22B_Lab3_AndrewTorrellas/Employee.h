@@ -30,7 +30,7 @@ public:
 	string getHireDate() const { return hireDate; };
 	// Mutator
 	void setName(string na) { name = na; };
-	void setNumber(int num) { number = num; };
+	void setNumber(int num);
 	void setHireDate(string date) { hireDate = date; };
 	virtual void dynamicDisplayAttributes();
 	void staticDisplayAttributes();
