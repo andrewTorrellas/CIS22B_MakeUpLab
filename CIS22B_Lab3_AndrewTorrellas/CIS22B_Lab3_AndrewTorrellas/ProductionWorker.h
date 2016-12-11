@@ -20,20 +20,20 @@ private:
 public:
 
 	// Exception class for an invalid payrate
-/*	class InvalidPayRate{
+	/*	class InvalidPayRate{
 	private:
-		double payrate;
+	double payrate;
 	public:
-		InvalidPayRate(double val)
-		{
-			payrate = val;
-		}
-		double getPayrate() const
-		{
-			return payrate;
-		}
+	InvalidPayRate(double val)
+	{
+	payrate = val;
+	}
+	double getPayrate() const
+	{
+	return payrate;
+	}
 	};
-*/
+	*/
 	// Declare constructor 
 	ProductionWorker();
 	// Overloaded constructor

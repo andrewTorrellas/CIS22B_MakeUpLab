@@ -5,7 +5,7 @@
 //**********************************************************************************
 // The constructor initialized shift and hourlyRate to 0.0
 //**********************************************************************************
-ProductionWorker::ProductionWorker(): Employee() // Call default employee constructor
+ProductionWorker::ProductionWorker() : Employee() // Call default employee constructor
 {
 	shift = 0;
 	hourlyRate = 0.0;
@@ -39,6 +39,8 @@ void ProductionWorker::setShift(int s)
 		string invalidShift = "Error: Invalid shift number entered, please enter 1 or 2: ";
 		throw invalidShift;
 	}
+	else
+		shift = s;
 }
 
 
@@ -54,7 +56,7 @@ void ProductionWorker::setHourlyRate(double r)
 		throw invalidPayrate;
 	}
 	else
-		r = hourlyRate;
+		hourlyRate = r;
 }
 
 //***********************************************************************************
