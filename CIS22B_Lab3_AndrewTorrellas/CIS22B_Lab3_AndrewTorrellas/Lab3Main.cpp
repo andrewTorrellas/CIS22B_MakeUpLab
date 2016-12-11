@@ -166,8 +166,21 @@ int main()
 					cout << "Please enter the employee's name: ";
 					getline(cin, emplName);
 					w1.setName(emplName);
-					cout << "Please enter the employee's number: ";
-					cin >> emplNum;
+					bool tryAgain = true;
+					while (tryAgain)
+					{
+						try
+						{
+							cout << "Please enter the employee's number: ";
+							cin >> emplNum;
+							w1.setNumber(emplNum);
+							tryAgain = false;
+						}
+						catch (string employeeException)
+						{
+							cout << employeeException << endl;
+						}
+					}
 					w1.setNumber(emplNum);
 					cout << "Please enter the employee's hiring date (MM/DD/YYYY): ";
 					cin.ignore();
@@ -227,9 +240,21 @@ int main()
 					cout << "Please enter the employee's name: ";
 					getline(cin, emplName);
 					t1.setName(emplName);
-					cout << "Please enter the employee's number: ";
-					cin >> emplNum;
-					t1.setNumber(emplNum);
+					bool tryAgain = true;
+					while (tryAgain)
+					{
+						try
+						{
+							cout << "Please enter the employee's number: ";
+							cin >> emplNum;
+							t1.setNumber(emplNum);
+							tryAgain = false;
+						}
+						catch (string employeeException)
+						{
+							cout << employeeException << endl;
+						}
+					}
 					cout << "Please enter the employee's hiring date (MM/DD/YYYY): ";
 					cin.ignore();
 					getline(cin, hiringDate);
@@ -287,9 +312,21 @@ int main()
 					cout << "Please enter the employee's name: ";
 					getline(cin, emplName);
 					s1.setName(emplName);
-					cout << "Please enter the employee's number: ";
-					cin >> emplNum;
-					s1.setNumber(emplNum);
+					bool tryAgain = true;
+					while (tryAgain)
+					{
+						try
+						{
+							cout << "Please enter the employee's number: ";
+							cin >> emplNum;
+							s1.setNumber(emplNum);
+							tryAgain = false;
+						}
+						catch (string employeeException)
+						{
+							cout << employeeException << endl;
+						}
+					}
 					cout << "Please enter the employee's hiring date (MM/DD/YYYY): ";
 					cin.ignore();
 					getline(cin, hiringDate);
