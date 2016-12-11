@@ -65,7 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Employee.cpp" />
-    <ClCompile Include="Lab3Main.cpp" />
+    <ClCompile Include="Makeup lab Main.cpp" />
     <ClCompile Include="ProductionWorker.cpp" />
     <ClCompile Include="ShiftSupervisor.cpp" />
     <ClCompile Include="TeamLeader.cpp" />

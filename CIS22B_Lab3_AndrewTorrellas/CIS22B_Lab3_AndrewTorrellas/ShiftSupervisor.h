@@ -10,7 +10,7 @@ using namespace std;
 #define SHIFT_SUPERVISOR_H
 #include "Employee.h"
 
-// ShiftSupervisor class declaration
+// ShiftSupervisor class declaration, derived from employee class
 class ShiftSupervisor : public Employee
 {
 private:

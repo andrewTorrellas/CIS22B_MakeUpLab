@@ -21,7 +21,9 @@ TeamLeader::TeamLeader(double am, double r, double at)
 	required = r;
 	if (at < 8)
 	{
+		// define string exception
 		string employeeException = "Employee training incomplete.";
+		// throw exception
 		throw employeeException;
 	}
 	else

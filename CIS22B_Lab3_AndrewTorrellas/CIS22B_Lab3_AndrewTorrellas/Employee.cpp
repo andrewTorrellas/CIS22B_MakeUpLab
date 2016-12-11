@@ -3,7 +3,7 @@
 #include "Employee.h"
 
 //**********************************************************************************
-// The constructor initialized number to 0, name and hireDate to " ".
+// The defult constructor initialized number to 0, name and hireDate to " ".
 //**********************************************************************************
 Employee::Employee()
 {
@@ -11,7 +11,9 @@ Employee::Employee()
 	number = 0;
 	hireDate = "";
 }
-
+//**********************************************************************************
+// The constructor initializes name, number and hiredate.
+//**********************************************************************************
 Employee::Employee(string n, int num, string h)
 {
 	name = n;
@@ -25,16 +27,18 @@ Employee::Employee(string n, int num, string h)
 	// If not set number equal to num
 	else
 		number = num;
-	hireDate = h;
+		hireDate = h;
 }
 
 void Employee::setNumber(int num)
 {
+	// If the employee number is outside throw exception
 	if (num < 0 || num > 9999)
 	{
 		string employeeException = "Invalid employee number.  Enter a number between 0 and 9999.";
 		throw employeeException;
 	}
+	// If not set number equal to num
 	else
 		number = num;
 }

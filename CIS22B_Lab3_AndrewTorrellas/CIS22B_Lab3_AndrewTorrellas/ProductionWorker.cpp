@@ -10,23 +10,28 @@ ProductionWorker::ProductionWorker() : Employee() // Call default employee const
 	shift = 0;
 	hourlyRate = 0.0;
 }
-
+//**********************************************************************************
+// The overloaded constructor
+//**********************************************************************************
 ProductionWorker::ProductionWorker(string n, int num, string h, int s, double r) : Employee(n, num, h)
-// Overloaded ProductionWorker Constructor. Passes str1, num1, str2 to Employee's overloaded constructor
+// Overloaded ProductionWorker Constructor. 
+// Passes n, num, h to Employee's overloaded constructor
 {
 	shift = s;
+	// set condition for exception
 	if (s != 1 && s != 2)
 	{
 		string invalidShift = "Error: Invalid shift number entered, please enter 1 or 2: ";
+		// throw exception
 		throw invalidShift;
 	}
 	hourlyRate = r;
 	if (r <= 0)
 	{
 		string invalidPayrate = "Error: Invalid value for payrate entered, please enter a postive value: ";
+		// throw exception
 		throw invalidPayrate;
 	}
-
 }
 
 //***********************************************************************************
@@ -34,9 +39,12 @@ ProductionWorker::ProductionWorker(string n, int num, string h, int s, double r)
 //***********************************************************************************
 void ProductionWorker::setShift(int s)
 {
+	// set condition
 	if (s != 1 && s != 2)
 	{
+		// define a string type exception
 		string invalidShift = "Error: Invalid shift number entered, please enter 1 or 2: ";
+		// throw exception
 		throw invalidShift;
 	}
 	else
@@ -52,7 +60,9 @@ void ProductionWorker::setHourlyRate(double r)
 {
 	if (r <= 0.0)
 	{
+		// define string type exception
 		string invalidPayrate = "Error: Invalid value for payrate entered, please enter a postive value: ";
+		// throw exception
 		throw invalidPayrate;
 	}
 	else

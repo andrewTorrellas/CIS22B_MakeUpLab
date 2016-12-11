@@ -10,7 +10,7 @@ using namespace std;
 #define WORKER_H
 #include "Employee.h"
 
-// Declare ProductionWorker class
+// Declare ProductionWorker class, derived from employee class
 class ProductionWorker : public Employee
 {
 private:
@@ -18,22 +18,6 @@ private:
 	int shift;
 	double hourlyRate;
 public:
-
-	// Exception class for an invalid payrate
-	/*	class InvalidPayRate{
-	private:
-	double payrate;
-	public:
-	InvalidPayRate(double val)
-	{
-	payrate = val;
-	}
-	double getPayrate() const
-	{
-	return payrate;
-	}
-	};
-	*/
 	// Declare constructor 
 	ProductionWorker();
 	// Overloaded constructor

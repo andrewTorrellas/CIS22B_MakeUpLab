@@ -5,7 +5,8 @@
 //**********************************************************************************
 // The constructor initialized salary and prodictionBonus to 0.0
 //**********************************************************************************
-ShiftSupervisor::ShiftSupervisor() : Employee() // call default employee constructor
+ShiftSupervisor::ShiftSupervisor() : Employee() 
+// call default employee constructor
 {
 	salary = 0.0;
 	productionBonus = 0.0;
