@@ -1,10 +1,11 @@
 // Author: Xiaosa Yang and Andrew Torrellas
-// Date: 11/21/2016
+// Date: 12/10/2016
 // Program Description:
 // This program uses four classes: Employee, ShiftSupervisor, ProductionWorker, and TeamLeader, each declared
 // in individual specification files, along with each class's member functuons defined in their individual
 // implementation filles. Member functions of each class are called from main function. This program complies
-// with those files to collect and display employees's info based on their position within the company.
+// with those files to collect and display employees's info based on their position within the company, with 
+// exceptions for the Employee classes, teamleader and production worker class.
 // Patner's Score: 3
 
 // Preprocessor directives
@@ -42,6 +43,8 @@ int main()
 	double doubleInput;
 	// Define variable position to hold position choice
 	int position = 1;
+	// Flag ti reread input
+	bool tryAgain = true;
 
 	// Show default and overloaded constructor
 	cout << "First we will demonstrate the default and overloaded constructor for the" << endl
@@ -175,11 +178,39 @@ int main()
 					// Get user input
 					cin >> intInput;
 					// call setShift member function from ProductionWorker class
-					w1.setShift(intInput);
+					while (tryAgain)
+					{
+						try
+						{
+							w1.setShift(intInput);
+							// If no exception was thrown, then the next statment will excute
+							tryAgain = false;
+						}
+						catch (string invalidShift)
+						{
+							cout << invalidShift;
+							cin >> intInput;
+						}
+					}
+
 					cout << "Please enter the employee's hourly pay rate: ";
 					cin >> doubleInput;
 					// call setHourlyRate function from ProductionWorker class
-					w1.setHourlyRate(doubleInput);
+					tryAgain = true;
+					while (tryAgain)
+					{
+						try
+						{
+							w1.setHourlyRate(doubleInput);
+							tryAgain = false;
+						}
+						catch (string invalidPayrate)
+						{
+							cout << invalidPayrate;
+							cin >> doubleInput;
+						}
+					}
+
 					// call function to display class attributes
 					w1.dynamicDisplayAttributes();
 					cin.ignore();

@@ -18,6 +18,22 @@ private:
 	int shift;
 	double hourlyRate;
 public:
+
+	// Exception class for an invalid payrate
+/*	class InvalidPayRate{
+	private:
+		double payrate;
+	public:
+		InvalidPayRate(double val)
+		{
+			payrate = val;
+		}
+		double getPayrate() const
+		{
+			return payrate;
+		}
+	};
+*/
 	// Declare constructor 
 	ProductionWorker();
 	// Overloaded constructor
@@ -28,8 +44,8 @@ public:
 	int getShift() const { return shift; };
 	double getHourlyRate() const { return hourlyRate; };
 	// Mutator
-	void setShift(int s) { shift = s; };
-	void setHourlyRate(double r) { hourlyRate = r; };
+	void setShift(int s);
+	void setHourlyRate(double r);
 	// dynamic binding
 	virtual void dynamicDisplayAttributes();
 	// static binding

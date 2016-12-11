@@ -5,7 +5,7 @@
 //**********************************************************************************
 // The constructor initialized shift and hourlyRate to 0.0
 //**********************************************************************************
-ProductionWorker::ProductionWorker() : Employee() // Call default employee constructor
+ProductionWorker::ProductionWorker(): Employee() // Call default employee constructor
 {
 	shift = 0;
 	hourlyRate = 0.0;
@@ -15,7 +15,46 @@ ProductionWorker::ProductionWorker(string n, int num, string h, int s, double r)
 // Overloaded ProductionWorker Constructor. Passes str1, num1, str2 to Employee's overloaded constructor
 {
 	shift = s;
+	if (s != 1 && s != 2)
+	{
+		string invalidShift = "Error: Invalid shift number entered, please enter 1 or 2: ";
+		throw invalidShift;
+	}
 	hourlyRate = r;
+	if (r <= 0)
+	{
+		string invalidPayrate = "Error: Invalid value for payrate entered, please enter a postive value: ";
+		throw invalidPayrate;
+	}
+
+}
+
+//***********************************************************************************
+//setShift sets the value of the member variable shift.
+//***********************************************************************************
+void ProductionWorker::setShift(int s)
+{
+	if (s != 1 && s != 2)
+	{
+		string invalidShift = "Error: Invalid shift number entered, please enter 1 or 2: ";
+		throw invalidShift;
+	}
+}
+
+
+//***********************************************************************************
+//setHourlyRate sets the value of the member variable hourlyRate
+//***********************************************************************************
+
+void ProductionWorker::setHourlyRate(double r)
+{
+	if (r <= 0.0)
+	{
+		string invalidPayrate = "Error: Invalid value for payrate entered, please enter a postive value: ";
+		throw invalidPayrate;
+	}
+	else
+		r = hourlyRate;
 }
 
 //***********************************************************************************
