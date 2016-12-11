@@ -35,7 +35,8 @@ public:
 	void setAmount(double a) { amount = a; };
 	void setRequired(double r) { required = r; };
 	void setAttended(double at);
-
+	
+	// Dynamic binding
 	virtual void dynamicDisplayAttributes();
 };
 

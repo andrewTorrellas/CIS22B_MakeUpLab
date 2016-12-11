@@ -19,6 +19,9 @@ ShiftSupervisor::~ShiftSupervisor()
 	cout << "This is the destuctor for the ShiftSupervisor class" << endl;
 }
 
+//***********************************************************************************
+// Function to display class attributes using dynamic binding
+//***********************************************************************************
 void ShiftSupervisor::dynamicDisplayAttributes()
 {
 	cout << "--------------------------------------------------------------" << endl << endl;

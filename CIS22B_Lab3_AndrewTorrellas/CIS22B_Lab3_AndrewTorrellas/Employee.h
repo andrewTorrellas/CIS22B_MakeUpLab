@@ -32,7 +32,9 @@ public:
 	void setName(string na) { name = na; };
 	void setNumber(int num);
 	void setHireDate(string date) { hireDate = date; };
+	// dynamic binding
 	virtual void dynamicDisplayAttributes();
+	// static binding
 	void staticDisplayAttributes();
 };
 

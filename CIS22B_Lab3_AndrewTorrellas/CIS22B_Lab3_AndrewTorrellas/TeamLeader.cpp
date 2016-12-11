@@ -36,6 +36,9 @@ TeamLeader::~TeamLeader()
 	cout << "Destructor for TeamLeader class." << endl;
 }
 
+//***********************************************************************************
+// Setter function for variable attended with built in exception
+//***********************************************************************************
 void TeamLeader::setAttended(double at)
 {
 	if (at < 8)
@@ -48,6 +51,9 @@ void TeamLeader::setAttended(double at)
 		attended = at;
 }
 
+//***********************************************************************************
+// Function to display class attributes using dynamic binding
+//***********************************************************************************
 void TeamLeader::dynamicDisplayAttributes()
 {
 	cout << "--------------------------------------------------------------" << endl << endl;

@@ -148,8 +148,9 @@ int main()
 					cin.ignore();
 					getline(cin, hiringDate);
 					emp1.setHireDate(hiringDate);
+					// call function to display class attributes
 					emp1.dynamicDisplayAttributes();
-
+					// Pause then clear screen
 					system("pause");
 					system("cls");
 					break;
@@ -179,9 +180,10 @@ int main()
 					cin >> doubleInput;
 					// call setHourlyRate function from ProductionWorker class
 					w1.setHourlyRate(doubleInput);
-					// Display user input
+					// call function to display class attributes
 					w1.dynamicDisplayAttributes();
 					cin.ignore();
+					// Pause then clear screen
 					system("pause");
 					system("cls");
 					break;
@@ -238,9 +240,10 @@ int main()
 					}
 					
 
-					// Display the data user entered
+					// call function to display class attributes
 					t1.dynamicDisplayAttributes();
 					cin.ignore();
+					// Pause then clear screen
 					system("pause");
 					system("cls");
 					break;
@@ -272,9 +275,10 @@ int main()
 					cin >> doubleInput;
 					// Call function setProductionBonus from ShiftSupervisor class
 					s1.setProductionBonus(doubleInput);
-					// Display user full inputs 
+					// call function to display class attributes
 					s1.dynamicDisplayAttributes();
 					cin.ignore();
+					// Pause then clear screen
 					system("pause");
 					system("cls");
 					break;

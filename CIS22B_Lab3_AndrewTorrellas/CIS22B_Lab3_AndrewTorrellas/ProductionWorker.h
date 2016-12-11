@@ -30,7 +30,9 @@ public:
 	// Mutator
 	void setShift(int s) { shift = s; };
 	void setHourlyRate(double r) { hourlyRate = r; };
+	// dynamic binding
 	virtual void dynamicDisplayAttributes();
+	// static binding
 	void staticDisplayAttributes();
 };
 

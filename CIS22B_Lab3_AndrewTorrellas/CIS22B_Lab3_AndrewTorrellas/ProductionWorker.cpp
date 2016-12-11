@@ -26,6 +26,9 @@ ProductionWorker::~ProductionWorker()
 	cout << "Destructor for ProductionWorker class." << endl;
 }
 
+//***********************************************************************************
+// Function to display class attributes using dynamic binding
+//***********************************************************************************
 void ProductionWorker::dynamicDisplayAttributes()
 {
 	cout << "--------------------------------------------------------------" << endl << endl;
@@ -41,6 +44,9 @@ void ProductionWorker::dynamicDisplayAttributes()
 	cout << "--------------------------------------------------------------" << endl << endl;
 }
 
+//***********************************************************************************
+// Function to display class attributes using static binding
+//***********************************************************************************
 void ProductionWorker::staticDisplayAttributes()
 {
 	cout << "--------------------------------------------------------------" << endl << endl;

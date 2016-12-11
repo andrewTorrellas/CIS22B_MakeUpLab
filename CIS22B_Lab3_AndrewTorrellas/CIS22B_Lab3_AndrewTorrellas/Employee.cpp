@@ -15,11 +15,14 @@ Employee::Employee()
 Employee::Employee(string n, int num, string h)
 {
 	name = n;
+	// Add exception for employee number
+	// If the employee number is outside throw exception
 	if (num < 0 || num > 9999)
 	{
 		string employeeException = "Invalid employee number.  Enter a number between 0 and 9999.";
 		throw employeeException;
 	}
+	// If not set number equal to num
 	else
 		number = num;
 	hireDate = h;
@@ -44,6 +47,9 @@ Employee::~Employee()
 	cout << "Destructor for Employee class." << endl;
 }
 
+//***********************************************************************************
+// Function to display class attributes using dynamic binding
+//***********************************************************************************
 void Employee::dynamicDisplayAttributes()
 {
 	cout << "--------------------------------------------------------------" << endl << endl;
@@ -53,6 +59,9 @@ void Employee::dynamicDisplayAttributes()
 	cout << "--------------------------------------------------------------" << endl << endl;
 }
 
+//***********************************************************************************
+// Function to display class attributes using static binding
+//***********************************************************************************
 void Employee::staticDisplayAttributes()
 {
 	cout << "--------------------------------------------------------------" << endl << endl;
